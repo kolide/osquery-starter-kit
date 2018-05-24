@@ -21,7 +21,7 @@ This repository aims to be a starting point for people that are looking to deplo
 To use this repo (or a repo like this), you must be using [Kolide Fleet](https://github.com/kolide/fleet) (version 2.0.0 or greater) to manage your osquery deployment and have a locally configured `fleetctl` binary. If your company already uses Kolide Fleet and you'd like to install the `fleetctl` CLI, there are a few supported options. On macOS, you can use the Homebrew package manager:
 
 ```
-$ brew tap kolide/taps
+$ brew tap kolide/tap
 $ brew install fleet
 ```
 
@@ -30,8 +30,8 @@ If you'd rather not use Homebrew or you would like to download `fleetctl` on ano
 Once you have the `fleetctl` binary in your path, you must configure your local CLI context to target your remote Fleet instance:
 
 ```
-$ fleetctl config set --address https://fleet.osquery.tools
-[+] Set the address config key to "https://fleet.osquery.tools" in the "default" context
+$ fleetctl config set --address https://fleet.corp.example.com
+[+] Set the address config key to "https://fleet.corp.example.com" in the "default" context
 ```
 
 Finally, login via the CLI:
