@@ -1,0 +1,497 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: windows-hardening
+  queries:
+  - description: Check Applications opted in for DEP
+    interval: 86400
+    name: AppCompat
+    query: AppCompat
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: PolicyScopeMachine
+    query: PolicyScopeMachine
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: PolicyScopeUser
+    query: PolicyScopeUser
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: No SRP whitelist rules'
+    interval: 86400
+    name: Unrestricted
+    query: Unrestricted
+    snapshot: true
+  - description: Check Applications opted in for DEP
+    interval: 86400
+    name: App_MitigationOptions
+    query: App_MitigationOptions
+    snapshot: true
+  - description: Check Applications not supporting SEHOP
+    interval: 86400
+    name: App_disabledExceptionChainValidation
+    query: App_disabledExceptionChainValidation
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: ExecutableTryMachine
+    query: ExecutableTryMachine
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: No SRP path rules'
+    interval: 86400
+    name: Disallowed_Paths
+    query: Disallowed_Paths
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: No SRP blacklist rules'
+    interval: 86400
+    name: Disallowed
+    query: Disallowed
+    snapshot: true
+  - description: Check Applocker rule set configuration
+    interval: 86400
+    name: RuleSetEnforcementMode
+    query: RuleSetEnforcementMode
+    snapshot: true
+  - description: Determine if Adobe Type Manager Font Driver is disabled (https://technet.microsoft.com/en-us/library/security/ms15-078)
+    interval: 3600
+    name: OpenType_Font_Driver_Vulnerability
+    query: OpenType_Font_Driver_Vulnerability
+    version: 2.2.1
+  - description: Whether Secureboot is enabled
+    interval: 86400
+    name: SecureBoot
+    query: SecureBoot
+    snapshot: true
+  - description: Check Applications opted in for DEP
+    interval: 86400
+    name: App_ExecuteOptions
+    query: App_ExecuteOptions
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: No SRP path rules'
+    interval: 86400
+    name: Unrestricted_Paths
+    query: Unrestricted_Paths
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: SRP whitelist rules is
+      missing'
+    interval: 86400
+    name: Unrestricted_Paths_ItemData
+    query: Unrestricted_Paths_ItemData
+    snapshot: true
+  - description: Determine if Windows is configured to log certificates with weak
+      crypto (https://technet.microsoft.com/library/dn375961(v=ws.11).aspx)
+    interval: 3600
+    name: Protecting_Against_Weak_Crypto_Algo
+    query: Protecting_Against_Weak_Crypto_Algo
+    version: 2.2.1
+  - description: Whether DEP is enabled with application mitigation options
+    interval: 86400
+    name: MitigationOptions
+    query: MitigationOptions
+    snapshot: true
+  - description: Determine state of Certificate Padding (https://docs.microsoft.com/en-us/security-updates/securityadvisories/2014/2915720)
+    interval: 86400
+    name: EnableCertPaddingCheck
+    query: EnableCertPaddingCheck
+    snapshot: true
+  - description: Check Control Flow Guard state
+    interval: 86400
+    name: ControlFlowGuard
+    query: ControlFlowGuard
+    snapshot: true
+  - description: Check Special Logon Audit configuration - https://blogs.technet.microsoft.com/jepayne/2015/11/26/tracking-lateral-movement-part-one-special-groups-and-specific-service-accounts/
+    interval: 86400
+    name: AuditSpecialGroups
+    query: AuditSpecialGroups
+    snapshot: true
+  - description: Check Microsoft Sysinternals Sysmon config
+    interval: 86400
+    name: SysmonConfig
+    query: SysmonConfig
+    snapshot: true
+  - description: Check ASLR configuration
+    interval: 86400
+    name: MoveImages
+    query: MoveImages
+    snapshot: true
+  - description: 'Check SEHOP state: DisabledExceptionChainValidation'
+    interval: 86400
+    name: DisabledExceptionChainValidation
+    query: DisabledExceptionChainValidation
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: DefaultLevelUser
+    query: DefaultLevelUser
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: TransparentEnabledUser
+    query: TransparentEnabledUser
+    snapshot: true
+  - description: Check Secure Search Path state (https://support.microsoft.com/en-us/help/2264107/a-new-cwdillegalindllsearch-registry-entry-is-available-to-control-the)
+    interval: 86400
+    name: CwdIllegalInDllSearch
+    query: CwdIllegalInDllSearch
+    snapshot: true
+  - description: Check Kernel Null page state
+    interval: 86400
+    name: EnableLowVaAccess
+    query: EnableLowVaAccess
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: ExecutableTryUser
+    query: ExecutableTryUser
+    snapshot: true
+  - description: Check Developer Mode state
+    interval: 86400
+    name: DeveloperMode
+    query: DeveloperMode
+    snapshot: true
+  - description: Controls UAC. A setting of 0 indicates that UAC is disabled.
+    interval: 0
+    name: UAC_Disabled
+    query: UAC_Disabled
+    version: 2.2.1
+  - description: Whether FontBlocking is enabled
+    interval: 86400
+    name: FontBlocking
+    query: FontBlocking
+    snapshot: true
+  - description: Whether SEHOP is enabled
+    interval: 86400
+    name: KernelSehopEnabled
+    query: KernelSehopEnabled
+    snapshot: true
+  - description: Determine state of Certificate Padding (https://docs.microsoft.com/en-us/security-updates/securityadvisories/2014/2915720)
+    interval: 86400
+    name: EnableCertPaddingCheck_wow64
+    query: EnableCertPaddingCheck_wow64
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: TransparentEnabledMachine
+    query: TransparentEnabledMachine
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: SRP blacklist rule is
+      missing'
+    interval: 86400
+    name: Disallowed_Paths_ItemData
+    query: Disallowed_Paths_ItemData
+    snapshot: true
+  - description: 'Check Software Restriction Policies state: SRP rule is not enforcing'
+    interval: 86400
+    name: SaferFlags
+    query: SaferFlags
+    snapshot: true
+  - description: Check Applocker rule set
+    interval: 86400
+    name: Rule
+    query: Rule
+    snapshot: true
+  - description: Whether DEP is enabled
+    interval: 86400
+    name: DepPolicy
+    query: DepPolicy
+    snapshot: true
+  - description: Check Software Restriction Policies state
+    interval: 86400
+    name: DefaultLevelMachine
+    query: DefaultLevelMachine
+    snapshot: true
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Applications opted in for DEP
+  name: AppCompat
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\%Microsoft\Windows
+    NT\CurrentVersion\AppCompatFlags\Layers'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: PolicyScopeMachine
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\PolicyScope'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: PolicyScopeUser
+  query: select * from registry where key like 'HKEY_USERS\%\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\PolicyScope'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: No SRP whitelist rules'
+  name: Unrestricted
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\262144'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Applications opted in for DEP
+  name: App_MitigationOptions
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\%Microsoft\Windows
+    NT\CurrentVersion\Image File Execution Options\%\MitigationOptions'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Applications not supporting SEHOP
+  name: App_disabledExceptionChainValidation
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\%Microsoft\Windows
+    NT\CurrentVersion\Image File Execution Options\%\DisableExceptionChainValidation'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: ExecutableTryMachine
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\ExecutableTry'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: No SRP path rules'
+  name: Disallowed_Paths
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: No SRP blacklist rules'
+  name: Disallowed
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Applocker rule set configuration
+  name: RuleSetEnforcementMode
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\%\EnforcementMode'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Determine if Adobe Type Manager Font Driver is disabled (https://technet.microsoft.com/en-us/library/security/ms15-078)
+  name: OpenType_Font_Driver_Vulnerability
+  query: select * from registry where path like 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
+    NT\CurrentVersion\Windows\%' AND name = 'DisableATMFD' AND data != '1';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Whether Secureboot is enabled
+  name: SecureBoot
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot\State\UEFISecureBootEnabled'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Applications opted in for DEP
+  name: App_ExecuteOptions
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\%Microsoft\Windows
+    NT\CurrentVersion\Image File Execution Options\%\executeOptions'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: No SRP path rules'
+  name: Unrestricted_Paths
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\262144\Paths'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: SRP whitelist rules is
+    missing'
+  name: Unrestricted_Paths_ItemData
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\262144\Paths\%\ItemData'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Determine if Windows is configured to log certificates with weak crypto
+    (https://technet.microsoft.com/library/dn375961(v=ws.11).aspx)
+  name: Protecting_Against_Weak_Crypto_Algo
+  query: select * from registry where path like 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\OID\EncodingType
+    0\CertDllCreateCertificateChainEngine\Config\Default\%' AND name IN ('WeakSha1ThirdPartyFlags','WeakMd5ThirdPartyFlags')
+    AND type = 'REG_DWORD' AND data not like '-2%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Whether DEP is enabled with application mitigation options
+  name: MitigationOptions
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\Kernel\MitigationOptions'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Determine state of Certificate Padding (https://docs.microsoft.com/en-us/security-updates/securityadvisories/2014/2915720)
+  name: EnableCertPaddingCheck
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\WinTrust\Config\EnableCertPaddingCheck'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Control Flow Guard state
+  name: ControlFlowGuard
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\Memory Management\EnableCfg'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Special Logon Audit configuration - https://blogs.technet.microsoft.com/jepayne/2015/11/26/tracking-lateral-movement-part-one-special-groups-and-specific-service-accounts/
+  name: AuditSpecialGroups
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Audit'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Microsoft Sysinternals Sysmon config
+  name: SysmonConfig
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CCS\Services\SysmonDrv\Parameters'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check ASLR configuration
+  name: MoveImages
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\Memory Management\moveImages'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check SEHOP state: DisabledExceptionChainValidation'
+  name: DisabledExceptionChainValidation
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\kernel\DisableExceptionChainValidation'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: DefaultLevelUser
+  query: select * from registry where key like 'HKEY_USERS\%\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\DefaultLevel'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: TransparentEnabledUser
+  query: select * from registry where key like 'HKEY_USERS\%\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\TransparentEnabled'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Secure Search Path state (https://support.microsoft.com/en-us/help/2264107/a-new-cwdillegalindllsearch-registry-entry-is-available-to-control-the)
+  name: CwdIllegalInDllSearch
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\CWDIllegalInDllSearch'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Kernel Null page state
+  name: EnableLowVaAccess
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\Memory Management\EnableLowVaAccess'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: ExecutableTryUser
+  query: select * from registry where key like 'HKEY_USERS\%\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\ExecutableTry'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Developer Mode state
+  name: DeveloperMode
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls UAC. A setting of 0 indicates that UAC is disabled.
+  name: UAC_Disabled
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA'
+    AND data=0;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Whether FontBlocking is enabled
+  name: FontBlocking
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
+    NT\MitigationOptions\MitigationOptions_FontBlocking'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Whether SEHOP is enabled
+  name: KernelSehopEnabled
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\Kernel\KernelSEHOPEnabled'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Determine state of Certificate Padding (https://docs.microsoft.com/en-us/security-updates/securityadvisories/2014/2915720)
+  name: EnableCertPaddingCheck_wow64
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Cryptography\WinTrust\Config\EnableCertPaddingCheck'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: TransparentEnabledMachine
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\TransparentEnabled'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: SRP blacklist rule is missing'
+  name: Disallowed_Paths_ItemData
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\0\Paths\%\ItemData'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Check Software Restriction Policies state: SRP rule is not enforcing'
+  name: SaferFlags
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\%\%\%\SaferFlags'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Applocker rule set
+  name: Rule
+  query: select * from registry where key like 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SrpV2\%\%\Value'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Whether DEP is enabled
+  name: DepPolicy
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SystemStartOptions'
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Check Software Restriction Policies state
+  name: DefaultLevelMachine
+  query: select * from registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\CodeIdentifiers\DefaultLevel'

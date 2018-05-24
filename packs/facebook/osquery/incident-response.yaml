@@ -1,0 +1,503 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: incident-response
+  queries:
+  - description: Retrieves the configuration values for the Application Layer Firewall
+      for OSX.
+    interval: 3600
+    name: alf
+    platform: darwin
+    query: alf
+    version: 1.4.5
+  - description: Retrieves all the currently installed applications in the target
+      OSX system.
+    interval: 3600
+    name: installed_applications
+    platform: darwin
+    query: installed_applications
+    version: 1.4.5
+  - description: Retrieves all the listening ports in the target system.
+    interval: 3600
+    name: listening_ports
+    platform: posix
+    query: listening_ports
+    version: 1.4.5
+  - description: Retrieves the memory map per process in the target Linux system.
+    interval: 86400
+    name: process_memory
+    platform: linux
+    query: process_memory
+    version: 1.4.5
+  - description: Retrieves all the remembered wireless network that the target machine
+      has connected to.
+    interval: 3600
+    name: wireless_networks
+    platform: darwin
+    query: wireless_networks
+    version: 1.6.0
+  - description: Retrieves the current disk encryption status for the target system.
+    interval: 86400
+    name: disk_encryption
+    platform: posix
+    query: disk_encryption
+    version: 1.4.5
+  - description: Retrieves all the daemons that will run in the start of the target
+      OSX system.
+    interval: 3600
+    name: launchd
+    platform: darwin
+    query: launchd
+    version: 1.4.5
+  - description: Retrieves all the values for the loginwindow process in the target
+      OSX system.
+    interval: 86400
+    name: loginwindow1
+    platform: darwin
+    query: loginwindow1
+    version: 1.4.5
+  - description: Retrieves the list of processes with explicit authorization for the
+      Application Layer Firewall.
+    interval: 3600
+    name: alf_explicit_auths
+    platform: darwin
+    query: alf_explicit_auths
+    version: 1.4.5
+  - description: Retrieves all the information for the current kernel modules in the
+      target Linux system.
+    interval: 3600
+    name: kernel_modules
+    platform: linux
+    query: kernel_modules
+    version: 1.4.5
+  - description: Retrieves all the open files per process in the target system.
+    interval: 86400
+    name: open_files
+    platform: posix
+    query: open_files
+    version: 1.4.5
+  - description: Retrieves all the ramdisk currently mounted in the target system.
+    interval: 3600
+    name: ramdisk
+    platform: posix
+    query: ramdisk
+    version: 1.4.5
+  - description: Retrieves the services for the Application Layer Firewall in OSX.
+    interval: 3600
+    name: alf_services
+    platform: darwin
+    query: alf_services
+    version: 1.4.5
+  - description: Retrieves all the open sockets per process in the target system.
+    interval: 86400
+    name: open_sockets
+    platform: posix
+    query: open_sockets
+    version: 1.4.5
+  - description: Retrieves the current list of Network File System mounted shares.
+    interval: 3600
+    name: nfs_shares
+    platform: darwin
+    query: nfs_shares
+    version: 1.4.5
+  - description: Retrieves the list of recent items opened in OSX by parsing the plist
+      per user.
+    interval: 86400
+    name: recent_items
+    platform: darwin
+    query: recent_items
+    version: 1.4.5
+  - description: Lists the application bundle that owns a sandbox label.
+    interval: 86400
+    name: sandboxes
+    platform: darwin
+    query: sandboxes
+    version: 1.4.7
+  - description: Retrieves the exceptions for the Application Layer Firewall in OSX.
+    interval: 3600
+    name: alf_exceptions
+    platform: darwin
+    query: alf_exceptions
+    version: 1.4.5
+  - description: Retrieves all the environment variables per process in the target
+      system.
+    interval: 86400
+    name: process_env
+    platform: posix
+    query: process_env
+    version: 1.4.5
+  - description: Retrieves the current list of mounted drives in the target system.
+    interval: 3600
+    name: mounts
+    platform: posix
+    query: mounts
+    version: 1.4.5
+  - description: Retrieves all the jobs scheduled in crontab in the target system.
+    interval: 3600
+    name: crontab
+    platform: posix
+    query: crontab
+    version: 1.4.5
+  - description: Retrieves all the values for the loginwindow process in the target
+      OSX system.
+    interval: 86400
+    name: loginwindow2
+    platform: darwin
+    query: loginwindow2
+    version: 1.4.5
+  - description: Retrieves all the information about the current kernel extensions
+      for the target OSX system.
+    interval: 3600
+    name: kextstat
+    platform: darwin
+    query: kextstat
+    version: 1.4.5
+  - description: Retrieves the current status of IP/IPv6 forwarding.
+    interval: 3600
+    name: ip_forwarding
+    platform: posix
+    query: ip_forwarding
+    version: 1.4.5
+  - description: Retrieves the ARP cache values in the target system.
+    interval: 3600
+    name: arp_cache
+    query: arp_cache
+    version: 1.4.5
+  - description: Retrieves the current filters and chains per filter in the target
+      system.
+    interval: 3600
+    name: iptables
+    platform: linux
+    query: iptables
+    version: 1.4.5
+  - description: Retrieves all the values for the loginwindow process in the target
+      OSX system.
+    interval: 86400
+    name: loginwindow3
+    platform: darwin
+    query: loginwindow3
+    version: 1.4.5
+  - description: Retrieves all the entries in the target system /etc/hosts file.
+    interval: 86400
+    name: etc_hosts
+    platform: posix
+    query: etc_hosts
+    version: 1.4.5
+  - description: Retrieves the list of all the currently logged in users in the target
+      system.
+    interval: 3600
+    name: logged_in_users
+    platform: posix
+    query: logged_in_users
+    version: 1.4.5
+  - description: Retrieves all the files in the target system that are setuid enabled.
+    interval: 3600
+    name: suid_bin
+    platform: posix
+    query: suid_bin
+    version: 1.4.5
+  - description: Retrieve all the items that will load when the target OSX system
+      starts.
+    interval: 86400
+    name: startup_items
+    platform: darwin
+    query: startup_items
+    version: 1.4.5
+  - description: Retrieves all the values for the loginwindow process in the target
+      OSX system.
+    interval: 86400
+    name: loginwindow4
+    platform: darwin
+    query: loginwindow4
+    version: 1.4.5
+  - description: Retrieves the list of the latest logins with PID, username and timestamp.
+    interval: 3600
+    name: last
+    platform: posix
+    query: last
+    version: 1.4.5
+  - description: Retrieves the command history, per user, by parsing the shell history
+      files.
+    interval: 86400
+    name: shell_history
+    platform: posix
+    query: shell_history
+    version: 1.4.5
+  - description: Retrieves the list of application scheme/protocol-based IPC handlers.
+    interval: 86400
+    name: app_schemes
+    platform: darwin
+    query: app_schemes
+    version: 1.4.7
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the configuration values for the Application Layer Firewall
+    for OSX.
+  name: alf
+  query: select * from alf;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the currently installed applications in the target OSX
+    system.
+  name: installed_applications
+  query: select * from apps;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the listening ports in the target system.
+  name: listening_ports
+  query: select * from listening_ports;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the memory map per process in the target Linux system.
+  name: process_memory
+  query: select * from process_memory_map;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the remembered wireless network that the target machine
+    has connected to.
+  name: wireless_networks
+  query: select ssid, network_name, security_type, last_connected, captive_portal,
+    possibly_hidden, roaming, roaming_profile from wifi_networks;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current disk encryption status for the target system.
+  name: disk_encryption
+  query: select * from disk_encryption;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the daemons that will run in the start of the target
+    OSX system.
+  name: launchd
+  query: select * from launchd;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the values for the loginwindow process in the target
+    OSX system.
+  name: loginwindow1
+  query: select key, subkey, value from plist where path = '/Library/Preferences/com.apple.loginwindow.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of processes with explicit authorization for the
+    Application Layer Firewall.
+  name: alf_explicit_auths
+  query: select * from alf_explicit_auths;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the information for the current kernel modules in the
+    target Linux system.
+  name: kernel_modules
+  query: select * from kernel_modules;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the open files per process in the target system.
+  name: open_files
+  query: select distinct pid, path from process_open_files where path not like '/private/var/folders%'
+    and path not like '/System/Library/%' and path not in ('/dev/null', '/dev/urandom',
+    '/dev/random');
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the ramdisk currently mounted in the target system.
+  name: ramdisk
+  query: select * from block_devices where type = 'Virtual Interface';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the services for the Application Layer Firewall in OSX.
+  name: alf_services
+  query: select * from alf_services;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the open sockets per process in the target system.
+  name: open_sockets
+  query: select distinct pid, family, protocol, local_address, local_port, remote_address,
+    remote_port, path from process_open_sockets where path <> '' or remote_address
+    <> '';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current list of Network File System mounted shares.
+  name: nfs_shares
+  query: select * from nfs_shares;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of recent items opened in OSX by parsing the plist
+    per user.
+  name: recent_items
+  query: select username, key, value from plist p, (select * from users where directory
+    like '/Users/%') u where p.path = u.directory || '/Library/Preferences/com.apple.recentitems.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Lists the application bundle that owns a sandbox label.
+  name: sandboxes
+  query: select * from sandboxes;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the exceptions for the Application Layer Firewall in OSX.
+  name: alf_exceptions
+  query: select * from alf_exceptions;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the environment variables per process in the target system.
+  name: process_env
+  query: select * from process_envs;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current list of mounted drives in the target system.
+  name: mounts
+  query: select * from mounts;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the jobs scheduled in crontab in the target system.
+  name: crontab
+  query: select * from crontab;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the values for the loginwindow process in the target
+    OSX system.
+  name: loginwindow2
+  query: select key, subkey, value from plist where path = '/Library/Preferences/loginwindow.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the information about the current kernel extensions for
+    the target OSX system.
+  name: kextstat
+  query: select * from kernel_extensions;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current status of IP/IPv6 forwarding.
+  name: ip_forwarding
+  query: select * from system_controls where oid = '4.30.41.1' union select * from
+    system_controls where oid = '4.2.0.1';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the ARP cache values in the target system.
+  name: arp_cache
+  query: select * from arp_cache;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current filters and chains per filter in the target system.
+  name: iptables
+  query: select * from iptables;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the values for the loginwindow process in the target
+    OSX system.
+  name: loginwindow3
+  query: select username, key, subkey, value from plist p, (select * from users where
+    directory like '/Users/%') u where p.path = u.directory || '/Library/Preferences/com.apple.loginwindow.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the entries in the target system /etc/hosts file.
+  name: etc_hosts
+  query: select * from etc_hosts;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of all the currently logged in users in the target
+    system.
+  name: logged_in_users
+  query: select liu.*, p.name, p.cmdline, p.cwd, p.root from logged_in_users liu,
+    processes p where liu.pid = p.pid;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the files in the target system that are setuid enabled.
+  name: suid_bin
+  query: select * from suid_bin;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieve all the items that will load when the target OSX system starts.
+  name: startup_items
+  query: select * from startup_items;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the values for the loginwindow process in the target
+    OSX system.
+  name: loginwindow4
+  query: select username, key, subkey, value from plist p, (select * from users where
+    directory like '/Users/%') u where p.path = u.directory || '/Library/Preferences/loginwindow.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of the latest logins with PID, username and timestamp.
+  name: last
+  query: select * from last;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the command history, per user, by parsing the shell history
+    files.
+  name: shell_history
+  query: select * from users join shell_history using (uid);
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of application scheme/protocol-based IPC handlers.
+  name: app_schemes
+  query: select * from app_schemes;

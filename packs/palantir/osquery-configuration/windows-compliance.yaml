@@ -1,0 +1,299 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: windows-compliance
+  queries:
+  - description: 'This key (and subkeys) exist by default and are required to allow
+      post-mortem debuggers like Dr. Watson. Some malware deletes this key. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+    interval: 0
+    name: Dr_Watson_Registry
+    query: Dr_Watson_Registry
+  - description: Controls enabling/disabling SMBv1. Setting this key to 0 disables
+      the SMBv1 protocol on the host.
+    interval: 0
+    name: SMBv1_Registry
+    query: SMBv1_Registry
+  - description: Controls Windows security provider configurations
+    interval: 0
+    name: Security_Providers_Registry
+    query: Security_Providers_Registry
+  - description: Controls system TPM settings
+    interval: 0
+    name: TPM_Registry
+    query: TPM_Registry
+  - description: Controls Windows command-line auditing
+    interval: 0
+    name: Command_Line_Auditing_Registry
+    query: Command_Line_Auditing_Registry
+  - description: 'This registry key specifies the path to a DLL to be loaded by a
+      Windows DNS server. This key does not exist by default. Can allow privesc: https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83'
+    interval: 0
+    name: DNS_Plugin_DLL_Registry
+    query: DNS_Plugin_DLL_Registry
+  - description: 'This key does not exist by default and controls enabling/disabling
+      error reporting display. Some malware creates this key and sets the value to
+      0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+    interval: 0
+    name: Error_Display_UI_Registry
+    query: Error_Display_UI_Registry
+  - description: The KnownDlls key defines the set of DLLs that are first searched
+      during system startup.
+    interval: 0
+    name: KnownDLLs_Registry
+    query: KnownDLLs_Registry
+  - description: Controls how many simultaneous terminal services sessions can use
+      the same account
+    interval: 0
+    name: Per_User_TS_Session_Registry
+    query: Per_User_TS_Session_Registry
+  - description: Controls Powershell execution policy, script execution, logging,
+      and more.
+    interval: 0
+    name: Powershell_Settings_Registry
+    query: Powershell_Settings_Registry
+  - description: Lists information about SecureBoot status.
+    interval: 0
+    name: Secure_Boot_Registry
+    query: Secure_Boot_Registry
+  - description: Controls Windows Update server location and installation behavior.
+    interval: 0
+    name: Windows_Update_Settings_Registry
+    query: Windows_Update_Settings_Registry
+  - description: 'Controls the suppression of error dialog boxes. The default value
+      is 0 (all messages are visible), but some malware sets this value to 2 (all
+      messages are invisible). See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+    interval: 0
+    name: Error_Mode_Registry
+    query: Error_Mode_Registry
+  - description: This key does not exist by default and controls enabling/disabling
+      error reporting. Some malware creates this key sets the value to 0 (disables
+      error reports). See https://msdn.microsoft.com/en-us/library/aa939342(v=winembedded.5).aspx
+      and https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html
+    interval: 0
+    name: Error_Report_Registry
+    query: Error_Report_Registry
+  - description: Controls behavior, size, and rotation strategy for primary windows
+      event log files.
+    interval: 0
+    name: Event_Log_Settings_Registry
+    query: Event_Log_Settings_Registry
+  - description: Entries for the FileRenameOperation support the MoveFileEx delayed-rename
+      and delayed-delete capabilities. Sometimes used as a self-deletion technique
+      for malware.
+    interval: 0
+    name: FileRenameOperations_Registry
+    query: FileRenameOperations_Registry
+  - description: Controls which security packages store credentials in LSA memory,
+      secure boot, etc.
+    interval: 0
+    name: Local_Security_Authority_Registry
+    query: Local_Security_Authority_Registry
+  - description: This key exists by default and has a default value of 1. Terminal
+      service connections are allowed to the host when the key value is set to 0
+    interval: 0
+    name: Terminal_Service_Deny_Registry
+    query: Terminal_Service_Deny_Registry
+  - description: Controls local WinRM client configuration and security.
+    interval: 0
+    name: WinRM_Settings_Registry
+    query: WinRM_Settings_Registry
+  - description: 'Controls enabling/disabling crash dumps. This key has a default
+      value of 7, but some malware sets this value to 0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+    interval: 0
+    name: Crash_Dump_Registry
+    query: Crash_Dump_Registry
+  - description: 'This key exists by default and has a default value of 1. Setting
+      this key to 0 disables logging errors/crashes to the System event channel. Some
+      malware sets this value to 0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+    interval: 0
+    name: Log_Errors_Registry
+    query: Log_Errors_Registry
+  - description: Controls sending administrative notifications after a crash. Some
+      malware sets this value to 0
+    interval: 0
+    name: Send_Error_Alert_Registry
+    query: Send_Error_Alert_Registry
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'This key (and subkeys) exist by default and are required to allow
+    post-mortem debuggers like Dr. Watson. Some malware deletes this key. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  name: Dr_Watson_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
+    NT\CurrentVersion\AeDebug';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls enabling/disabling SMBv1. Setting this key to 0 disables the
+    SMBv1 protocol on the host.
+  name: SMBv1_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\SMB1';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Windows security provider configurations
+  name: Security_Providers_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls system TPM settings
+  name: TPM_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\TPM';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Windows command-line auditing
+  name: Command_Line_Auditing_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'This registry key specifies the path to a DLL to be loaded by a Windows
+    DNS server. This key does not exist by default. Can allow privesc: https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83'
+  name: DNS_Plugin_DLL_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\DNS\Parameters\ServerLevelPluginDll';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'This key does not exist by default and controls enabling/disabling
+    error reporting display. Some malware creates this key and sets the value to 0.
+    See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  name: Error_Display_UI_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\PCHealth\ErrorReporting\ShowUI';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: The KnownDlls key defines the set of DLLs that are first searched during
+    system startup.
+  name: KnownDLLs_Registry
+  query: SELECT * FROM registry WHERE path LIKE 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\KnownDLLs\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls how many simultaneous terminal services sessions can use the
+    same account
+  name: Per_User_TS_Session_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal
+    Server\fSingleSessionPerUser';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Powershell execution policy, script execution, logging, and
+    more.
+  name: Powershell_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Lists information about SecureBoot status.
+  name: Secure_Boot_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecureBoot';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Windows Update server location and installation behavior.
+  name: Windows_Update_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Controls the suppression of error dialog boxes. The default value
+    is 0 (all messages are visible), but some malware sets this value to 2 (all messages
+    are invisible). See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  name: Error_Mode_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Windows\ErrorMode';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: This key does not exist by default and controls enabling/disabling
+    error reporting. Some malware creates this key sets the value to 0 (disables error
+    reports). See https://msdn.microsoft.com/en-us/library/aa939342(v=winembedded.5).aspx
+    and https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html
+  name: Error_Report_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\PCHealth\ErrorReporting\DoReport';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls behavior, size, and rotation strategy for primary windows
+    event log files.
+  name: Event_Log_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\EventLog\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Entries for the FileRenameOperation support the MoveFileEx delayed-rename
+    and delayed-delete capabilities. Sometimes used as a self-deletion technique for
+    malware.
+  name: FileRenameOperations_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session
+    Manager\FileRenameOperations';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls which security packages store credentials in LSA memory, secure
+    boot, etc.
+  name: Local_Security_Authority_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: This key exists by default and has a default value of 1. Terminal service
+    connections are allowed to the host when the key value is set to 0
+  name: Terminal_Service_Deny_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal
+    Server\fDenyTSConnections';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls local WinRM client configuration and security.
+  name: WinRM_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Controls enabling/disabling crash dumps. This key has a default value
+    of 7, but some malware sets this value to 0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  name: Crash_Dump_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\CrashDumpEnabled';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'This key exists by default and has a default value of 1. Setting this
+    key to 0 disables logging errors/crashes to the System event channel. Some malware
+    sets this value to 0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  name: Log_Errors_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\LogEvent';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls sending administrative notifications after a crash. Some malware
+    sets this value to 0
+  name: Send_Error_Alert_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\SendAlert';

@@ -1,0 +1,129 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: unwanted-chrome-extensions
+  queries:
+  - description: (http://adios-hola.org)
+    interval: 0
+    name: HolaVPN
+    query: HolaVPN
+  - description: (https://www.bleepingcomputer.com/news/security/chrome-extension-with-over-one-million-users-hijacked-to-serve-adware/)
+    interval: 0
+    name: WebDeveloper
+    query: WebDeveloper
+  - description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+    interval: 0
+    name: BetternetVPN
+    query: BetternetVPN
+  - description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+    interval: 0
+    name: Chrometana
+    query: Chrometana
+  - description: (https://www.bleepingcomputer.com/news/security/copyfish-chrome-extension-hijacked-to-show-adware/)
+    interval: 0
+    name: CopyFish
+    query: CopyFish
+  - description: (https://www.reddit.com/r/chrome/comments/6htzan/psawarning_giphy_extension_6172017_is_now_malware/)
+    interval: 0
+    name: Giphy
+    query: Giphy
+  - description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+    interval: 0
+    name: InfinityNewTab
+    query: InfinityNewTab
+  - description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+    interval: 0
+    name: SocialFixer
+    query: SocialFixer
+  - description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+    interval: 0
+    name: TouchVPN
+    query: TouchVPN
+  - description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+    interval: 0
+    name: WebPaint
+    query: WebPaint
+  - description: (https://www.virustotal.com/#/file/5cab0821f597100dc1170bfef704d8cebaf67743e9d509e83b0b208eb630d992/detection)
+    interval: 0
+    name: MacOSInstallCore
+    query: MacOSInstallCore
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://adios-hola.org)
+  name: HolaVPN
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='gkojfkhlekighikafcpjkiklfbnlmeio';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/chrome-extension-with-over-one-million-users-hijacked-to-serve-adware/)
+  name: WebDeveloper
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='bfbameneiokkgbdmiekhjnmfkcnldhhm';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+  name: BetternetVPN
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='gjknjjomckknofjidppipffbpoekiipm';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+  name: Chrometana
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='kaicbfmipfpfpjmlbpejaoaflfdnabnc';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/copyfish-chrome-extension-hijacked-to-show-adware/)
+  name: CopyFish
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='eenjdnjldapjajjofmldgmkjaienebbj';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.reddit.com/r/chrome/comments/6htzan/psawarning_giphy_extension_6172017_is_now_malware/)
+  name: Giphy
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='kaicbfmipfpfpjmlbpejaoaflfdnabnc';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+  name: InfinityNewTab
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='dbfmnekepjoapopniengjbcpnbljalfg';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+  name: SocialFixer
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='ifmhoabcaeehkljcfclfiieohkohdgbb';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+  name: TouchVPN
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='bihmplhobchoageeokmgbdihknkjbknd';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.bleepingcomputer.com/news/security/eight-chrome-extensions-hijacked-to-deliver-malicious-code-to-4-8-million-users/)
+  name: WebPaint
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='emeokgokialpjadjaoeiplmnkjoaegng';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.virustotal.com/#/file/5cab0821f597100dc1170bfef704d8cebaf67743e9d509e83b0b208eb630d992/detection)
+  name: MacOSInstallCore
+  query: SELECT * FROM users JOIN chrome_extensions USING (uid) WHERE identifier='hinehnlkkmckjblijjpbpamhljokoohh';

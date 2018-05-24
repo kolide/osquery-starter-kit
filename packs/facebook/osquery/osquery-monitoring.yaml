@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: osquery-monitoring
+  queries:
+  - description: A heartbeat counter that reports general performance (CPU, memory)
+      and version.
+    interval: 0
+    name: osquery_info
+    query: osquery_info
+    removed: false
+    version: 1.2.2
+  - description: Report performance for every query within packs and the general schedule.
+    interval: 0
+    name: schedule
+    query: schedule
+    removed: false
+    version: 1.6.0
+  - description: Report event publisher health and track event counters.
+    interval: 0
+    name: events
+    query: events
+    removed: false
+    version: 1.5.3
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: A heartbeat counter that reports general performance (CPU, memory)
+    and version.
+  name: osquery_info
+  query: select i.*, p.resident_size, p.user_time, p.system_time, time.minutes as
+    counter from osquery_info i, processes p, time where p.pid = i.pid;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Report performance for every query within packs and the general schedule.
+  name: schedule
+  query: select name, interval, executions, output_size, wall_time, (user_time/executions)
+    as avg_user_time, (system_time/executions) as avg_system_time, average_memory,
+    last_executed from osquery_schedule;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Report event publisher health and track event counters.
+  name: events
+  query: select name, publisher, type, subscriptions, events, active from osquery_events;

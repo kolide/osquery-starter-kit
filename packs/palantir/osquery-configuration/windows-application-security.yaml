@@ -1,0 +1,86 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: windows-application-security
+  queries:
+  - description: Controls UAC. A setting of 0 indicates that UAC is disabled.
+    interval: 0
+    name: UAC_Settings_Registry
+    query: UAC_Settings_Registry
+  - description: Controls Bitlocker full-disk encryption settings.
+    interval: 0
+    name: Bitlocker_AutoEncrypt_Settings_Registry
+    query: Bitlocker_AutoEncrypt_Settings_Registry
+  - description: Controls Bitlocker full-disk encryption settings.
+    interval: 0
+    name: Bitlocker_FDE_Settings_Registry
+    query: Bitlocker_FDE_Settings_Registry
+  - description: Controls Google Chrome plugins that are forcibly installed.
+    interval: 0
+    name: Chrome_Extension_ForceList_Registry
+    query: Chrome_Extension_ForceList_Registry
+  - description: Controls EMET-protected applications and system settings.
+    interval: 0
+    name: EMET_Settings_Registry
+    query: EMET_Settings_Registry
+  - description: Controls Local Administrative Password Solution (LAPS) settings.
+    interval: 0
+    name: Microsoft_LAPS_Settings_Registry
+    query: Microsoft_LAPS_Settings_Registry
+  - description: Controls Windows Passport for Work (Hello) settings.
+    interval: 0
+    name: Passport_For_Work_Settings_Registry
+    query: Passport_For_Work_Settings_Registry
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls UAC. A setting of 0 indicates that UAC is disabled.
+  name: UAC_Settings_Registry
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Bitlocker full-disk encryption settings.
+  name: Bitlocker_AutoEncrypt_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Bitlocker\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Bitlocker full-disk encryption settings.
+  name: Bitlocker_FDE_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Google Chrome plugins that are forcibly installed.
+  name: Chrome_Extension_ForceList_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls EMET-protected applications and system settings.
+  name: EMET_Settings_Registry
+  query: SELECT * FROM registry WHERE key LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\EMET\%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Local Administrative Password Solution (LAPS) settings.
+  name: Microsoft_LAPS_Settings_Registry
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft
+    Services\AdmPwd';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Controls Windows Passport for Work (Hello) settings.
+  name: Passport_For_Work_Settings_Registry
+  query: SELECT * FROM registry WHERE path LIKE 'HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\PassportForWork\%%';

@@ -1,0 +1,396 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: windows-registry-monitoring
+  queries:
+  - description: Returns the content of this key if it exists, which it shouldn't
+      by default
+    interval: 0
+    name: DNS_Plugin_DLL_Registry_Exists
+    platform: windows
+    query: DNS_Plugin_DLL_Registry_Exists
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Powershell_ScriptBlockLogging_Registry_Missing
+    platform: windows
+    query: Powershell_ScriptBlockLogging_Registry_Missing
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Dr_Watson_Registry_Missing
+    platform: windows
+    query: Dr_Watson_Registry_Missing
+  - description: Returns the content of this key if it exists, which it shouldn't
+      by default
+    interval: 0
+    name: Error_Display_UI_Registry_Exists
+    platform: windows
+    query: Error_Display_UI_Registry_Exists
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Powershell_ModuleLogging_Registry_Missing
+    platform: windows
+    query: Powershell_ModuleLogging_Registry_Missing
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Command_Line_Auditing_Registry_Missing
+    platform: windows
+    query: Command_Line_Auditing_Registry_Missing
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Powershell_TranscriptingLogging_Registry_Missing
+    platform: windows
+    query: Powershell_TranscriptingLogging_Registry_Missing
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: WinRM_Settings_Registry_Misconfigured
+    platform: windows
+    query: WinRM_Settings_Registry_Misconfigured
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Crash_Dump_Registry_Missing
+    platform: windows
+    query: Crash_Dump_Registry_Missing
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Bitlocker_MBAM_Registry_Misconfigured
+    platform: windows
+    query: Bitlocker_MBAM_Registry_Misconfigured
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Per_User_TS_Session_Registry_Misconfigured
+    platform: windows
+    query: Per_User_TS_Session_Registry_Misconfigured
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: SMBv1_Registry_Missing
+    platform: windows
+    query: SMBv1_Registry_Missing
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Bitlocker_MBAM_Endpoint_Registry_Misconfigured
+    platform: windows
+    query: Bitlocker_MBAM_Endpoint_Registry_Misconfigured
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Error_Mode_Registry_Missing
+    platform: windows
+    query: Error_Mode_Registry_Missing
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Powershell_Logging_Registry_Misconfigured
+    platform: windows
+    query: Powershell_Logging_Registry_Misconfigured
+  - description: ""
+    interval: 0
+    name: SMBv1_Registry_Misconfigured
+    platform: windows
+    query: SMBv1_Registry_Misconfigured
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Bitlocker_Encryption_Settings_Registry_Misconfigured
+    platform: windows
+    query: Bitlocker_Encryption_Settings_Registry_Misconfigured
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Error_Mode_Registry_Misconfigured
+    platform: windows
+    query: Error_Mode_Registry_Misconfigured
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Log_Errors_Registry_Misconfigured
+    platform: windows
+    query: Log_Errors_Registry_Misconfigured
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Log_Errors_Registry_Missing
+    platform: windows
+    query: Log_Errors_Registry_Missing
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Subscription_Manager_Registry_Misconfigured
+    platform: windows
+    query: Subscription_Manager_Registry_Misconfigured
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Subscription_Manager_Registry_Missing
+    platform: windows
+    query: Subscription_Manager_Registry_Missing
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Powershell_InvocationHeader_Registry_Missing
+    platform: windows
+    query: Powershell_InvocationHeader_Registry_Missing
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Crash_Dump_Registry_Misconfigured
+    platform: windows
+    query: Crash_Dump_Registry_Misconfigured
+  - description: Returns 0 as a result if the registry key does not exist
+    interval: 0
+    name: Per_User_TS_Session_Registry_Missing
+    platform: windows
+    query: Per_User_TS_Session_Registry_Missing
+  - description: Returns the content of this key if it exists, which it shouldn't
+      by default
+    interval: 0
+    name: Send_Error_Alert_Registry_Exists
+    platform: windows
+    query: Send_Error_Alert_Registry_Exists
+  - description: Returns the content of the key if it does not match the expected
+      value
+    interval: 0
+    name: Command_Line_Auditing_Registry_Misconfigured
+    platform: windows
+    query: Command_Line_Auditing_Registry_Misconfigured
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of this key if it exists, which it shouldn't by
+    default
+  name: DNS_Plugin_DLL_Registry_Exists
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\DNS\Parameters\ServerLevelPluginDll';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Powershell_ScriptBlockLogging_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\ScriptBlockLogging\EnableScriptBlockLogging')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Dr_Watson_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry where key='HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AeDebug')
+    WHERE key_exists!=2;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of this key if it exists, which it shouldn't by
+    default
+  name: Error_Display_UI_Registry_Exists
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\PCHealth\ErrorReporting\ShowUI';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Powershell_ModuleLogging_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\ModuleLogging\EnableModuleLogging')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Command_Line_Auditing_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit\ProcessCreationIncludeCmdLine_Enabled')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Powershell_TranscriptingLogging_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\Transcription\EnableTranscripting')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: WinRM_Settings_Registry_Misconfigured
+  query: 'SELECT * FROM registry WHERE (path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Client\AllowBasic''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Client\AllowCredSSP''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Client\AllowUnencryptedTraffic''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Client\AllowDigest''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Service\AllowBasic''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Service\AllowCredSSP''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Service\AllowUnencryptedTraffic''
+    OR path=''HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WinRM\Service\WinRS\AllowRemoteShellAccess'')
+    AND data!=0; '
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Crash_Dump_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\CrashDumpEnabled')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Bitlocker_MBAM_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE\MDOPBitLockerManagement\UseMBAMServices'
+    AND data!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Per_User_TS_Session_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal
+    Server\fSingleSessionPerUser' AND data!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: SMBv1_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\SMB1')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Bitlocker_MBAM_Endpoint_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE\MDOPBitLockerManagement\KeyRecoveryServiceEndPoint'
+    AND data!='https://mbam.server.com/MBAMRecoveryAndHardwareService/CoreService.svc';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Error_Mode_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Windows\ErrorMode')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Powershell_Logging_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE (path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\ModuleLogging\EnableModuleLogging'
+    OR path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\ScriptBlockLogging\EnableScriptBlockLogging'
+    OR path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\Transcription\EnableTranscripting'
+    OR path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\Transcription\EnableInvocationHeader')
+    AND data!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  name: SMBv1_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\SMB1'
+    AND data!=0;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Bitlocker_Encryption_Settings_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE (path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE\MDOPBitLockerManagement\ShouldEncryptOSDrive'
+    OR path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE\MDOPBitLockerManagement\OSDriveProtector')
+    AND data!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Error_Mode_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Windows\ErrorMode'
+    AND data=2;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Log_Errors_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\LogEvent'
+    AND data!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Log_Errors_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\LogEvent')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Subscription_Manager_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\EventLog\EventForwarding\SubscriptionManager\1'
+    AND (data!='Server=http://subdomain.domain.com:5985/wsman/SubscriptionManager/WEC'
+    AND data!='Server=http://subdomain.domain.com:5985/wsman/SubscriptionManager/WEC');
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Subscription_Manager_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\EventLog\EventForwarding\SubscriptionManager\1')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Powershell_InvocationHeader_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Powershell\Transcription\EnableInvocationHeader')
+    WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Crash_Dump_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\CrashDumpEnabled'
+    AND data=0;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns 0 as a result if the registry key does not exist
+  name: Per_User_TS_Session_Registry_Missing
+  query: SELECT IFNULL(key_count,0) AS key_exists FROM (SELECT COUNT(*) AS key_count
+    FROM registry WHERE path='HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal
+    Server\fSingleSessionPerUser') WHERE key_exists!=1;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of this key if it exists, which it shouldn't by
+    default
+  name: Send_Error_Alert_Registry_Exists
+  query: SELECT * FROM registry WHERE key='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\SendAlert';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Returns the content of the key if it does not match the expected value
+  name: Command_Line_Auditing_Registry_Misconfigured
+  query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\Audit\ProcessCreationIncludeCmdLine_Enabled'
+    AND data!=1;

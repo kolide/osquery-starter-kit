@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: query
+spec:
+  name: pending_updates
+  query: >
+    select value
+    from plist
+    where
+      path = "/Library/Preferences/ManagedInstalls.plist" and
+      key = "PendingUpdateCount" and
+      value > "0";
+---
+apiVersion: v1
+kind: query
+spec:
+  name: slack_not_running
+  query: >
+    select * from system_info
+    where not exists (
+      select *
+      from processes
+      where name like "%Slack%"
+    );

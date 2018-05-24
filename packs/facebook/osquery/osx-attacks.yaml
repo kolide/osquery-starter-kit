@@ -1,0 +1,866 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: osx-attacks
+  queries:
+  - description: (http://www.symantec.com/security_response/writeup.jsp?docid=2010-081606-4034-99&tabid=2)
+    interval: 3600
+    name: SniperSpy
+    query: SniperSpy
+    version: 1.4.5
+  - description: New version of Genieo
+    interval: 3600
+    name: GenieoPart2
+    query: GenieoPart2
+    version: 1.4.5
+  - description: (https://www.fireeye.com/blog/threat-research/2014/09/forced-to-adapt-xslcmd-backdoor-now-on-os-x.html)
+    interval: 3600
+    name: XSLCmd
+    query: XSLCmd
+    version: 1.4.5
+  - description: (http://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/osx_morcut.a)
+    interval: 3600
+    name: Morcut
+    query: Morcut
+    version: 1.4.5
+  - description: (http://securelist.com/blog/research/57331/the-icefog-apt-a-tale-of-cloak-and-three-daggers/)
+    interval: 3600
+    name: Icefog
+    query: Icefog
+    version: 1.4.5
+  - description: (http://blog.kaspersky.com/the-mask-unveiling-the-worlds-most-sophisticated-apt-campaign/)
+    interval: 3600
+    name: Careto
+    query: Careto
+    version: 1.4.5
+  - description: (https://www.virusbtn.com/virusbulletin/archive/2014/10/vb201410-iWorm)
+    interval: 3600
+    name: iWorm_1
+    query: iWorm_1
+    version: 1.4.5
+  - description: Detect RAT used by Hacking Team
+    interval: 3600
+    name: HackingTeam_Mac_RAT1
+    query: HackingTeam_Mac_RAT1
+    version: 1.4.5
+  - description: (https://www.elitekeyloggers.com/elite-keylogger-mac)
+    interval: 3600
+    name: EliteKeylogger
+    query: EliteKeylogger
+    version: 1.4.5
+  - description: (http://www.intego.com/mac-security-blog/os-x-malware-tibet-variant-found/)
+    interval: 3600
+    name: Tibet.D
+    query: Tibet.D
+    version: 1.4.5
+  - description: (https://threatpost.com/mac-adware-osx-pirrit-unleashes-ad-overload-for-now/117273/)
+    interval: 3600
+    name: OSX_Pirrit
+    query: OSX_Pirrit
+    version: 1.4.5
+  - description: (http://aobo.cc/aobo-mac-os-x-keylogger.html)
+    interval: 3600
+    name: Aobo_Keylogger
+    query: Aobo_Keylogger
+    version: 1.4.5
+  - description: (https://blog.malwarebytes.com/threat-analysis/2016/07/cross-platform-malware-adwind-infects-mac/)
+    interval: 3600
+    name: Java_Adwind_Trojan
+    query: Java_Adwind_Trojan
+    version: 1.4.5
+  - description: (https://www.virusbtn.com/virusbulletin/archive/2014/10/vb201410-iWorm)
+    interval: 3600
+    name: iWorm
+    query: iWorm
+    version: 1.4.5
+  - description: DOK Launch Agents (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+    interval: 3600
+    name: OSX_DOK_1
+    query: OSX_DOK_1
+    version: 1.4.5
+  - description: (http://www.intego.com/mac-security-blog/new-mac-trojan-discovered-related-to-syria/)
+    interval: 3600
+    name: Leverage-A_2
+    query: Leverage-A_2
+    version: 1.4.5
+  - description: Report on Apple/OS X XProtect 'report' generation. Reports are generated
+      when OS X matches an item in xprotect_entries.
+    interval: 0
+    name: xprotect_reports
+    query: xprotect_reports
+    removed: false
+    version: 1.4.5
+  - description: http://researchcenter.paloaltonetworks.com/2016/03/new-os-x-ransomware-keranger-infected-transmission-bittorrent-client-installer/
+    interval: 3600
+    name: Keranger_1
+    query: Keranger_1
+    version: 1.4.5
+  - description: DOK malicious app (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+    interval: 3600
+    name: OSX_DOK_4
+    query: OSX_DOK_4
+    version: 1.4.5
+  - description: (http://www.blazingtools.com/mac_keylogger.html)
+    interval: 3600
+    name: BlazingKeylogger
+    query: BlazingKeylogger
+    version: 1.4.5
+  - description: (http://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/osx_dockster.a)
+    interval: 3600
+    name: Dockster
+    query: Dockster
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/osxfkcodec-a-in-action/)
+    interval: 3600
+    name: Codecm
+    query: Codecm
+    version: 1.4.5
+  - description: (https://blog.malwarebytes.com/cybercrime/2016/07/new-mac-backdoor-malware-eleanor/)
+    interval: 3600
+    name: Backdoor_MAC_Eleanor
+    query: Backdoor_MAC_Eleanor
+    version: 1.4.5
+  - description: 'OSX/Proton bundled with a tampered version of Elmedia Player: (https://www.welivesecurity.com/2017/10/20/osx-proton-supply-chain-attack-elmedia/)'
+    interval: 3600
+    name: OSX_Proton_Launchd
+    query: OSX_Proton_Launchd
+    version: 1.4.5
+  - description: 'Apple added XProtect rules for this sample: (https://www.virustotal.com/en/file/f261815905e77eebdb5c4ec06a7acdda7b68644b1f5155049f133be866d8b179/analysis/1509567775/)'
+    interval: 3600
+    name: OSX_HiddenLotus
+    query: OSX_HiddenLotus
+    version: 1.4.5
+  - description: (https://www.f-secure.com/v-descs/backdoor_osx_olyx_c.shtml)
+    interval: 3600
+    name: Olyx
+    query: Olyx
+    version: 1.4.5
+  - description: (https://www.f-secure.com/v-descs/backdoor_osx_sabpab_a.shtml)
+    interval: 3600
+    name: PubSab
+    query: PubSab
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/osxfkcodec-a-in-action/ )
+    interval: 3600
+    name: Whitesmoke
+    query: Whitesmoke
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-bundlore/)
+    interval: 3600
+    name: Bundlore
+    query: Bundlore
+    version: 1.4.5
+  - description: (http://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/)
+    interval: 3600
+    name: OSX_Komplex
+    query: OSX_Komplex
+    version: 1.4.5
+  - description: OceanLotus dropped file (https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update)
+    interval: 3600
+    name: OceanLotus_dropped_file_1
+    query: OceanLotus_dropped_file_1
+    version: 1.4.5
+  - description: DOK certificate (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+    interval: 3600
+    name: OSX_DOK_2
+    query: OSX_DOK_2
+    version: 1.4.5
+  - description: (https://www.f-secure.com/v-descs/backdoor_osx_iworkserv_a.shtml)
+    interval: 3600
+    name: iWorkServ
+    query: iWorkServ
+    version: 1.4.5
+  - description: (https://www.f-secure.com/v-descs/backdoor_osx_mackontrol_a.shtml)
+    interval: 3600
+    name: MacKontrol
+    query: MacKontrol
+    version: 1.4.5
+  - description: (https://www.f-secure.com/weblog/archives/00002546.html)
+    interval: 3600
+    name: CallMe
+    query: CallMe
+    version: 1.4.5
+  - description: Detect RAT used by Hacking Team
+    interval: 3600
+    name: HackingTeam_Mac_RAT3
+    query: HackingTeam_Mac_RAT3
+    version: 1.4.5
+  - description: Mughthesec OSX Malware (https://objective-see.com/blog/blog_0x20.html)
+    interval: 3600
+    name: OSX_Mughthesec
+    query: OSX_Mughthesec
+    version: 1.4.5
+  - description: MaMi OSX Malware 2017-01-12 (https://objective-see.com/blog/blog_0x26.html)
+    interval: 3600
+    name: OSX_MaMi_DNS_Servers
+    query: OSX_MaMi_DNS_Servers
+    version: 2.8.0
+  - description: (https://www.f-secure.com/v-descs/backdoor_osx_imuler_a.shtml)
+    interval: 3600
+    name: Imuler
+    query: Imuler
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-conduit/)
+    interval: 3600
+    name: Conduit
+    query: Conduit
+    version: 1.4.5
+  - description: OS X port of Snake malware discovered by Fox-IT (https://blog.fox-it.com/2017/05/03/snake-coming-soon-in-mac-os-x-flavour/)
+    interval: 3600
+    name: OSX_Snake
+    query: OSX_Snake
+    version: 1.4.5
+  - description: 'OSX/Proton bundled with a tampered version of Handbrake and Elmedia
+      Player: (https://objective-see.com/blog/blog_0x1D.html and https://www.welivesecurity.com/2017/10/20/osx-proton-supply-chain-attack-elmedia/)'
+    interval: 3600
+    name: OSX_Proton_Process
+    query: OSX_Proton_Process
+    version: 1.4.5
+  - description: (https://www.f-secure.com/v-descs/inqtana_a.shtml)
+    interval: 3600
+    name: Inqtana
+    query: Inqtana
+    version: 1.4.5
+  - description: Quimitchin Launch Agent (https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/)
+    interval: 3600
+    name: Quimitchin_Backdoor
+    query: Quimitchin_Backdoor
+    version: 1.4.5
+  - description: MaMi OSX Malware 2017-01-12 (https://objective-see.com/blog/blog_0x26.html)
+    interval: 3600
+    name: OSX_MaMi_Certificate
+    query: OSX_MaMi_Certificate
+    version: 2.8.0
+  - description: (https://www.volexity.com/blog/2017/07/24/real-news-fake-flash-mac-os-x-users-targeted/)
+    interval: 3600
+    name: Leverage-A_3
+    query: Leverage-A_3
+    version: 1.4.5
+  - description: (https://www.f-secure.com/v-descs/backdoor_osx_devilrobber_a.shtml)
+    interval: 3600
+    name: DevilRobber
+    query: DevilRobber
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-buca-apps/)
+    interval: 3600
+    name: Buca
+    query: Buca
+    version: 1.4.5
+  - description: (https://www.virustotal.com/en/file/9530d481f7bb07aac98a46357bfcff96e2936a90571b4629ae865a2ce63e5c8e/analysis/1458973247/)
+    interval: 3600
+    name: SearchInstUpdater
+    query: SearchInstUpdater
+    version: 1.4.5
+  - description: 'OSX/Proton bundled with a tampered version of Handbrake and Elmedia
+      Player: (https://objective-see.com/blog/blog_0x1D.html and https://www.welivesecurity.com/2017/10/20/osx-proton-supply-chain-attack-elmedia/)'
+    interval: 3600
+    name: OSX_Proton_Files
+    query: OSX_Proton_Files
+    version: 1.4.5
+  - description: ProntoApp Launch Agents (https://malwarefixes.com/remove-pronto-video-converter/)
+    interval: 3600
+    name: Pronto
+    query: Pronto
+    version: 1.4.5
+  - description: EmPyre post exploitation agent (https://github.com/EmpireProject/EmPyre/blob/master/lib/modules/persistence/osx/launchdaemonexecutable.py)
+    interval: 3600
+    name: EmPyre_Agent
+    query: EmPyre_Agent
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-downlite/)
+    interval: 3600
+    name: Vsearch
+    query: Vsearch
+    version: 1.4.5
+  - description: Detection persistency by Hacking Team
+    interval: 3600
+    name: HackingTeam_Mac_Persistence
+    query: HackingTeam_Mac_Persistence
+    version: 1.4.5
+  - description: (http://www.welivesecurity.com/2016/07/06/new-osxkeydnap-malware-hungry-credentials)
+    interval: 3600
+    name: OSX_Keydnap
+    query: OSX_Keydnap
+    version: 1.4.5
+  - description: (https://securelist.com/blog/research/75990/the-missing-piece-sophisticated-os-x-backdoor-discovered/)
+    interval: 3600
+    name: OSX_Backdoor_Mokes
+    query: OSX_Backdoor_Mokes
+    version: 1.4.5
+  - description: DOK dropped file (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+    interval: 3600
+    name: OSX_DOK_3
+    query: OSX_DOK_3
+    version: 1.4.5
+  - description: FruitFly OSX Malware (https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/)
+    interval: 3600
+    name: OSX_FruitFly
+    query: OSX_FruitFly
+    version: 1.4.5
+  - description: Detect RAT used by Hacking Team
+    interval: 3600
+    name: HackingTeam_Mac_RAT2
+    query: HackingTeam_Mac_RAT2
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-premier-opinion/)
+    interval: 3600
+    name: PremierOpinion
+    query: PremierOpinion
+    version: 1.4.5
+  - description: OceanLotus Launch Agent (https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update)
+    interval: 3600
+    name: OceanLotus_launchagent
+    query: OceanLotus_launchagent
+    version: 1.4.5
+  - description: Xcode Ghost dropped files (http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/)
+    interval: 3600
+    name: XcodeGhost
+    query: XcodeGhost
+    version: 1.4.5
+  - description: (https://github.com/PaloAltoNetworks-BD/WireLurkerDetector)
+    interval: 3600
+    name: WireLurker
+    query: WireLurker
+    version: 1.4.5
+  - description: http://researchcenter.paloaltonetworks.com/2016/03/new-os-x-ransomware-keranger-infected-transmission-bittorrent-client-installer/
+    interval: 3600
+    name: Keranger_2
+    query: Keranger_2
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-spigot/)
+    interval: 3600
+    name: Spigot
+    query: Spigot
+    version: 1.4.5
+  - description: (http://www.intego.com/mac-security-blog/new-mac-trojan-discovered-related-to-syria/)
+    interval: 3600
+    name: Leverage-A_1
+    query: Leverage-A_1
+    version: 1.4.5
+  - description: (http://www.thesafemac.com/arg-genieo/)
+    interval: 3600
+    name: Genieo
+    query: Genieo
+    version: 1.4.5
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.symantec.com/security_response/writeup.jsp?docid=2010-081606-4034-99&tabid=2)
+  name: SniperSpy
+  query: select * from launchd where name = 'com.rxs.syslogagent.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: New version of Genieo
+  name: GenieoPart2
+  query: select * from launchd where program_arguments like '/Users/%/Library/Application
+    Support/%/%.app/Contents/MacOS/App% -trigger download -isDev % -installVersion
+    % -firstAppId % -identity %';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.fireeye.com/blog/threat-research/2014/09/forced-to-adapt-xslcmd-backdoor-now-on-os-x.html)
+  name: XSLCmd
+  query: select * from launchd where name = 'com.apple.service.clipboardd.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/osx_morcut.a)
+  name: Morcut
+  query: select * from launchd where name = 'com.apple.mdworker.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://securelist.com/blog/research/57331/the-icefog-apt-a-tale-of-cloak-and-three-daggers/)
+  name: Icefog
+  query: select * from launchd where name = 'apple.launchd.plist' or name = 'com.apple.launchport.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://blog.kaspersky.com/the-mask-unveiling-the-worlds-most-sophisticated-apt-campaign/)
+  name: Careto
+  query: select * from launchd where path like '%com.apple.launchport.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.virusbtn.com/virusbulletin/archive/2014/10/vb201410-iWorm)
+  name: iWorm_1
+  query: select * from file where path like '/Library/Application Support/JavaW%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Detect RAT used by Hacking Team
+  name: HackingTeam_Mac_RAT1
+  query: select * from file where path = '/dev/ptmx0';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.elitekeyloggers.com/elite-keylogger-mac)
+  name: EliteKeylogger
+  query: select * from launchd where name = 'com.apple.fonts.plist' and label = 'unknown';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.intego.com/mac-security-blog/os-x-malware-tibet-variant-found/)
+  name: Tibet.D
+  query: select * from launchd where path like '%com.apple.AudioService.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://threatpost.com/mac-adware-osx-pirrit-unleashes-ad-overload-for-now/117273/)
+  name: OSX_Pirrit
+  query: select * from plist where path = '/Library/Preferences/com.common.plist'
+    and key = 'net_pref';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://aobo.cc/aobo-mac-os-x-keylogger.html)
+  name: Aobo_Keylogger
+  query: select * from launchd where name like 'com.ab.kl%.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://blog.malwarebytes.com/threat-analysis/2016/07/cross-platform-malware-adwind-infects-mac/)
+  name: Java_Adwind_Trojan
+  query: select * from launchd where name like 'org.%.plist' and program_arguments
+    like '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java
+    -Dapple.awt.UIElement=true -jar /Users/%/.%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.virusbtn.com/virusbulletin/archive/2014/10/vb201410-iWorm)
+  name: iWorm
+  query: select * from launchd where name = 'com.JavaW.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: DOK Launch Agents (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+  name: OSX_DOK_1
+  query: select * from launchd where name = 'com.apple.Safari.proxy.plist' or name
+    = 'com.apple.Safari.proxy.pac';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.intego.com/mac-security-blog/new-mac-trojan-discovered-related-to-syria/)
+  name: Leverage-A_2
+  query: select * from file where path = '/Users/Shared/UserEvent.app';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Report on Apple/OS X XProtect 'report' generation. Reports are generated
+    when OS X matches an item in xprotect_entries.
+  name: xprotect_reports
+  query: select * from xprotect_reports;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: http://researchcenter.paloaltonetworks.com/2016/03/new-os-x-ransomware-keranger-infected-transmission-bittorrent-client-installer/
+  name: Keranger_1
+  query: select * from processes where name = 'kernel_service';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: DOK malicious app (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+  name: OSX_DOK_4
+  query: select * from apps where bundle_name = 'Truesteer.AppStore';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.blazingtools.com/mac_keylogger.html)
+  name: BlazingKeylogger
+  query: select * from launchd where name = 'com.BT.BPK.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/osx_dockster.a)
+  name: Dockster
+  query: select * from launchd where name = 'mac.Dockset.deman.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/osxfkcodec-a-in-action/)
+  name: Codecm
+  query: select * from launchd where name = 'com.codecm.uploader.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://blog.malwarebytes.com/cybercrime/2016/07/new-mac-backdoor-malware-eleanor/)
+  name: Backdoor_MAC_Eleanor
+  query: SELECT * FROM launchd WHERE name IN ('com.getdropbox.dropbox.integritycheck.plist','com.getdropbox.dropbox.timegrabber.plist','com.getdropbox.dropbox.usercontent.plist');
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'OSX/Proton bundled with a tampered version of Elmedia Player: (https://www.welivesecurity.com/2017/10/20/osx-proton-supply-chain-attack-elmedia/)'
+  name: OSX_Proton_Launchd
+  query: select * from launchd where name='com.Eltima.UpdaterAgent.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'Apple added XProtect rules for this sample: (https://www.virustotal.com/en/file/f261815905e77eebdb5c4ec06a7acdda7b68644b1f5155049f133be866d8b179/analysis/1509567775/)'
+  name: OSX_HiddenLotus
+  query: select * from launchd where name = 'com.apple.hidd.shared.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/backdoor_osx_olyx_c.shtml)
+  name: Olyx
+  query: select * from launchd where name = 'com.apple.DockActions.plist' or name
+    like '%www. google.com.tstart.plist%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/backdoor_osx_sabpab_a.shtml)
+  name: PubSab
+  query: select * from launchd where name = 'com.apple.PubSabAgent.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/osxfkcodec-a-in-action/ )
+  name: Whitesmoke
+  query: select * from launchd where name = 'com.whitesmoke.uploader.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-bundlore/)
+  name: Bundlore
+  query: select * from launchd where name like 'com.WebShoppy.%.plist' or name like
+    'com.SoftwareUpdater.%.plist' or name like 'cinema-plus%.plist' or name like 'com.WebTools.%.plist'
+    or name like 'com.crossrider.%.plist' or name like 'shopy-mate_%.plist' or name
+    like 'com.WebShopper.%.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://researchcenter.paloaltonetworks.com/2016/09/unit42-sofacys-komplex-os-x-trojan/)
+  name: OSX_Komplex
+  query: select * from file where path = '/Users/Shared/.local/kext' or path = '/Users/Shared/com.apple.updates.plist'
+    or path = '/Users/Shared/start.sh';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: OceanLotus dropped file (https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update)
+  name: OceanLotus_dropped_file_1
+  query: select * from file, ( select '/Library/Logs/.Logs/corevideosd' ioc union
+    select '/Library/.SystemPreferences/.prev/.ver.txt' ioc union select '/Library/Parallels/.cfg'
+    ioc union select '/Library/Preferences/.fDTYuRs' ioc union select '/Library/Hash/.Hashtag/.hash'
+    ioc union select '/Library/Hash/.hash' ioc ) iocs where file.path LIKE '/Users/%/'
+    || ioc OR file.path = iocs.ioc OR file.path LIKE '/tmp/crunzip.temp.%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: DOK certificate (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+  name: OSX_DOK_2
+  query: select common_name, sha1, subject_key_id from certificates where subject_key_id
+    = 'e637d656f9f088ddca3b3b55c4fe698d8c97a552';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/backdoor_osx_iworkserv_a.shtml)
+  name: iWorkServ
+  query: select * from startup_items where path like '%iWorkServices%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/backdoor_osx_mackontrol_a.shtml)
+  name: MacKontrol
+  query: select * from launchd where name = 'com.apple.FolderActionsxl.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/weblog/archives/00002546.html)
+  name: CallMe
+  query: select * from launchd where name = 'realPlayerUpdate.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Detect RAT used by Hacking Team
+  name: HackingTeam_Mac_RAT3
+  query: select * from launchd where label = 'com.ht.RCSMac' OR name = 'com.apple.loginStoreagent.plist'
+    OR name = 'com.apple.mdworker.plist' OR name = 'com.apple.UIServerLogin.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Mughthesec OSX Malware (https://objective-see.com/blog/blog_0x20.html)
+  name: OSX_Mughthesec
+  query: select * from launchd where name = 'com.Mughthesec.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: MaMi OSX Malware 2017-01-12 (https://objective-see.com/blog/blog_0x26.html)
+  name: OSX_MaMi_DNS_Servers
+  query: select * from dns_resolvers where type = 'nameserver' and address in ('82.163.143.135',
+    '82.163.142.137');
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/backdoor_osx_imuler_a.shtml)
+  name: Imuler
+  query: select * from launchd where name = 'checkflr.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-conduit/)
+  name: Conduit
+  query: select * from launchd where path like '%com.conduit.loader.agent.plist' or
+    name = 'com.conduit.loader.agent.plist' or path like '%com.perion.searchprotectd.plist'
+    or name = 'com.perion.searchprotectd.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: OS X port of Snake malware discovered by Fox-IT (https://blog.fox-it.com/2017/05/03/snake-coming-soon-in-mac-os-x-flavour/)
+  name: OSX_Snake
+  query: select * from file where path = '/Library/LaunchDaemons/com.adobe.update.plist'
+    OR path = '/Library/Scripts/installd.sh' OR path = '/Library/Scripts/queue' OR
+    path = '/tmp/.gdm-socket' OR path = '/tmp/.gdm-selinux' OR path LIKE '/var/tmp/.ur-%%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'OSX/Proton bundled with a tampered version of Handbrake and Elmedia
+    Player: (https://objective-see.com/blog/blog_0x1D.html and https://www.welivesecurity.com/2017/10/20/osx-proton-supply-chain-attack-elmedia/)'
+  name: OSX_Proton_Process
+  query: select * from processes where path like '/Users/%/Library/RenderFiles/activity_agent.app/Contents/MacOS/activity_agent'
+    OR path='/Library/.rand/updateragent.app/Contents/MacOS/updateragent';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/inqtana_a.shtml)
+  name: Inqtana
+  query: select * from launchd where name = 'com.pwned.plist' or name = 'com.openbundle.plist'
+    or name = 'com.adobe.reader.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Quimitchin Launch Agent (https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/)
+  name: Quimitchin_Backdoor
+  query: select * from launchd where name = 'com.client.client.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: MaMi OSX Malware 2017-01-12 (https://objective-see.com/blog/blog_0x26.html)
+  name: OSX_MaMi_Certificate
+  query: select * from certificates where common_name like '%cloudguard.me%' and not_valid_after
+    = '2352216315';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.volexity.com/blog/2017/07/24/real-news-fake-flash-mac-os-x-users-targeted/)
+  name: Leverage-A_3
+  query: select * from launchd where name = 'com.GetFlashPlayer.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.f-secure.com/v-descs/backdoor_osx_devilrobber_a.shtml)
+  name: DevilRobber
+  query: select * from launchd where name = 'com.apple.legion.plist' or name = 'com.apple.pixel.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-buca-apps/)
+  name: Buca
+  query: select * from launchd where name = 'com.webhelper.plist' or name = 'com.webtools.update.agent.plist'
+    or name = 'com.webtools.uninstaller.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://www.virustotal.com/en/file/9530d481f7bb07aac98a46357bfcff96e2936a90571b4629ae865a2ce63e5c8e/analysis/1458973247/)
+  name: SearchInstUpdater
+  query: select * from launchd where name like 'com.updater.mc%.plist' or name like
+    'com.updater.watch.mc%.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: 'OSX/Proton bundled with a tampered version of Handbrake and Elmedia
+    Player: (https://objective-see.com/blog/blog_0x1D.html and https://www.welivesecurity.com/2017/10/20/osx-proton-supply-chain-attack-elmedia/)'
+  name: OSX_Proton_Files
+  query: select * from file where path like '/Users/%/Library/RenderFiles/activity_agent.app/'
+    OR path like '/Users/%/Library/LaunchAgents/fr.handbrake.activity_agent.plist'
+    OR path='/tmp/Updater.app' OR path='/Library/.rand/updateragent.app';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: ProntoApp Launch Agents (https://malwarefixes.com/remove-pronto-video-converter/)
+  name: Pronto
+  query: select * from launchd where name = 'pronto.notification.plist' or name =
+    'pronto.update.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: EmPyre post exploitation agent (https://github.com/EmpireProject/EmPyre/blob/master/lib/modules/persistence/osx/launchdaemonexecutable.py)
+  name: EmPyre_Agent
+  query: select * from launchd where name = 'com.proxy.initialize.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-downlite/)
+  name: Vsearch
+  query: select * from launchd where name = 'com.vsearch.agent.plist' OR name = 'com.vsearch.daemon.plist'
+    OR name = 'com.vsearch.helper.plist' OR name = 'Jack.plist' OR program_arguments
+    = '/etc/run_upd.sh' OR program_arguments LIKE '/Library/Application Support/%/Agent/agent.app/Contents/MacOS/agent%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Detection persistency by Hacking Team
+  name: HackingTeam_Mac_Persistence
+  query: select * from file where directory like '/Users/%/Library/Preferences/8pHbqThW%';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.welivesecurity.com/2016/07/06/new-osxkeydnap-malware-hungry-credentials)
+  name: OSX_Keydnap
+  query: select * from launchd where name IN ('com.apple.iCloud.sync.daemon', 'com.geticloud.icloud.photo');
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://securelist.com/blog/research/75990/the-missing-piece-sophisticated-os-x-backdoor-discovered/)
+  name: OSX_Backdoor_Mokes
+  query: select * from file where path LIKE '/Users/%/Library/App Store/storeuserd'
+    OR path LIKE '/Users/%/Library/com.apple.spotlight/SpotlightHelper' OR path LIKE
+    '/Users/%/Library/Dock/com.apple.dock.cache' OR path LIKE '/Users/%/Library/Dropbox/DropboxCache'
+    OR path LIKE '/Users/%/Library/Skype/SkypeHelper' OR path LIKE '/Users/%/Library/Google/Chrome/nacld'
+    OR path LIKE '/Users/%/Library/Firefox/Profiles/profiled';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: DOK dropped file (http://blog.checkpoint.com/2017/04/27/osx-malware-catching-wants-read-https-traffic/)
+  name: OSX_DOK_3
+  query: select * from file where path = '/Users/Shared/AppStore.app';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: FruitFly OSX Malware (https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/)
+  name: OSX_FruitFly
+  query: select * from launchd where name = 'com.client.client.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Detect RAT used by Hacking Team
+  name: HackingTeam_Mac_RAT2
+  query: select * from apps where bundle_identifier = 'com.ht.RCSMac';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-premier-opinion/)
+  name: PremierOpinion
+  query: select * from launchd where name = 'PremierOpinion.plist' or name = 'PremierOpinionAgent.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: OceanLotus Launch Agent (https://www.alienvault.com/blogs/labs-research/oceanlotus-for-os-x-an-application-bundle-pretending-to-be-an-adobe-flash-update)
+  name: OceanLotus_launchagent
+  query: select * from launchd where name = 'com.google.plugins.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Xcode Ghost dropped files (http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/)
+  name: XcodeGhost
+  query: select * from ( select apps.bundle_short_version as xcode_version, apps.path
+    as xcode_path, file.path, file.type as file_type from apps, file where apps.bundle_name='Xcode'
+    and file.path like (apps.path || '/Contents/Developer/Platforms/%/Developer/SDKs/Library/%%'))
+    join hash using (path) where file_type = 'regular';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (https://github.com/PaloAltoNetworks-BD/WireLurkerDetector)
+  name: WireLurker
+  query: select * from launchd where name = 'com.apple.machook_damon.plist' OR name
+    = 'com.apple.globalupdate.plist' OR name = 'com.apple.appstore.plughelper.plist'
+    OR name = 'com.apple.MailServiceAgentHelper.plist' OR name = 'com.apple.systemkeychain-helper.plist'
+    OR name = 'com.apple.periodic-dd-mm-yy.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: http://researchcenter.paloaltonetworks.com/2016/03/new-os-x-ransomware-keranger-infected-transmission-bittorrent-client-installer/
+  name: Keranger_2
+  query: select * from file where path LIKE '/Users/%/Library/.kernel_%' OR path LIKE
+    '/Users/%/Library/kernel_service';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-spigot/)
+  name: Spigot
+  query: select * from launchd where name like 'com.spigot.%.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.intego.com/mac-security-blog/new-mac-trojan-discovered-related-to-syria/)
+  name: Leverage-A_1
+  query: select * from launchd where path like '%UserEvent.System.plist';
+---
+apiVersion: v1
+kind: query
+spec:
+  description: (http://www.thesafemac.com/arg-genieo/)
+  name: Genieo
+  query: select * from launchd where name = 'com.genieo.completer.download.plist'
+    OR name = 'com.genieo.completer.update.plist' OR name = 'com.genieo.completer.ltvbit.plist'
+    OR name = 'com.installer.completer.download.plist' OR name = 'com.installer.completer.update.plist'
+    OR name = 'com.installer.completer.ltvbit.plist' OR name = 'com.genieoinnovation.macextension.plist'
+    OR name = 'com.genieoinnovation.macextension.client.plist' OR name = 'com.genieo.engine.plist';

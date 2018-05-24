@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: query
+spec:
+  name: hostname
+  query: select hostname from system_info;
+---
+apiVersion: v1
+kind: query
+spec:
+  name: uuid
+  query: select uuid from osquery_info;
+---
+apiVersion: v1
+kind: query
+spec:
+  name: instance_id
+  query: select instance_id from system_info;
+---
+apiVersion: v1
+kind: query
+spec:
+  name: always_true
+  query: select 1;
+---
+apiVersion: v1
+kind: query
+spec:
+  name: centos_hosts
+  query: select 1 from os_version where platform = "centos";
+---
+apiVersion: v1
+kind: query
+spec:
+  name: ubuntu_hosts
+  query: select 1 from os_version where platform = "ubuntu";
+---
+apiVersion: v1
+kind: query
+spec:
+  name: windows_hosts
+  query: select 1 from os_version where platform = "windows";
+---
+apiVersion: v1
+kind: query
+spec:
+  name: darwin_hosts
+  query: select 1 from os_version where platform = "darwin";

@@ -1,0 +1,449 @@
+---
+apiVersion: v1
+kind: pack
+spec:
+  name: it-compliance
+  queries:
+  - description: Retrieves the current version of the running osquery in the target
+      system and where the configuration was loaded from.
+    interval: 86400
+    name: osquery_info
+    query: osquery_info
+    version: 1.4.5
+  - description: Retrieves the list of extensions for Chrome in the target system.
+    interval: 86400
+    name: chrome_extensions
+    query: chrome_extensions
+    version: 1.4.5
+  - description: Retrieves all the APT sources to install packages from in the target
+      Linux system.
+    interval: 86400
+    name: apt_sources
+    platform: ubuntu
+    query: apt_sources
+    version: 1.4.5
+  - description: Retrieves the current filters and chains per filter in the target
+      system.
+    interval: 86400
+    name: iptables
+    platform: linux
+    query: iptables
+    version: 1.4.5
+  - description: Retrieves information from the current kernel in the target system.
+    interval: 86400
+    name: kernel_info
+    query: kernel_info
+    version: 1.4.5
+  - description: Retrieves the exceptions for the Application Layer Firewall in OSX.
+    interval: 86400
+    name: alf_exceptions
+    platform: darwin
+    query: alf_exceptions
+    version: 1.4.5
+  - description: Retrieves the current list of USB devices in the target system.
+    interval: 86400
+    name: usb_devices
+    query: usb_devices
+    version: 1.4.5
+  - description: Retrieves all the information for the current windows drivers in
+      the target Windows system.
+    interval: 86400
+    name: windows_drivers
+    platform: windows
+    query: windows_drivers
+    version: 2.2.0
+  - description: Retrieves the list of products as they are installed by Windows Installer
+      in the target Windows system.
+    interval: 86400
+    name: windows_programs
+    platform: windows
+    query: windows_programs
+    version: 2.0.0
+  - description: Retrieves all the installed DEB packages in the target Linux system.
+    interval: 86400
+    name: deb_packages
+    platform: ubuntu
+    query: deb_packages
+    version: 1.4.5
+  - description: Retrieves the current disk encryption status for the target system.
+    interval: 86400
+    name: disk_encryption
+    platform: posix
+    query: disk_encryption
+    version: 1.4.5
+  - description: Retrieves the services for the Application Layer Firewall in OSX.
+    interval: 86400
+    name: alf_services
+    platform: darwin
+    query: alf_services
+    version: 1.4.5
+  - description: Retrieves the list of processes with explicit authorization for the
+      Application Layer Firewall.
+    interval: 86400
+    name: alf_explicit_auths
+    platform: darwin
+    query: alf_explicit_auths
+    version: 1.4.5
+  - description: Retrieves the current list of Network File System mounted shares.
+    interval: 86400
+    name: nfs_shares
+    platform: darwin
+    query: nfs_shares
+    version: 1.4.5
+  - description: Retrieves the list of shared resources in the target Windows system.
+    interval: 86400
+    name: windows_shared_resources
+    platform: windows
+    query: windows_shared_resources
+    version: 2.0.0
+  - description: Retrieves all the installed RPM packages in the target Linux system.
+    interval: 86400
+    name: rpm_packages
+    platform: linux
+    query: rpm_packages
+    version: 1.4.5
+  - description: Retrieves all the currently installed applications in the target
+      OSX system.
+    interval: 86400
+    name: installed_applications
+    platform: darwin
+    query: installed_applications
+    version: 1.4.5
+  - description: Retrieves all the daemons that will run in the start of the target
+      OSX system.
+    interval: 86400
+    name: launchd
+    platform: darwin
+    query: launchd
+    version: 1.4.5
+  - description: Retrieves the current System Integrity Protection configuration in
+      the target system.
+    interval: 86400
+    name: sip_config
+    platform: darwin
+    query: sip_config
+    version: 1.7.0
+  - description: Retrieves the Active Directory configuration for the target machine,
+      attached to the domain (requires sudo).
+    interval: 86400
+    name: ad_config
+    platform: darwin
+    query: ad_config
+    version: 1.4.5
+  - description: Retrieves the list of brew packages installed in the target OSX system.
+    interval: 86400
+    name: homebrew_packages
+    platform: darwin
+    query: homebrew_packages
+    version: 1.4.5
+  - description: Retrieves all the packages installed with portage from the target
+      Linux system.
+    interval: 86400
+    name: portage_packages
+    platform: gentoo
+    query: portage_packages
+    version: 2.0.0
+  - description: Retrieves all the PKG related information stored in OSX.
+    interval: 86400
+    name: package_receipts
+    platform: darwin
+    query: package_receipts
+    version: 1.4.5
+  - description: Retrieves all the items contained in the keychain in the target OSX
+      system.
+    interval: 86400
+    name: keychain_items
+    platform: darwin
+    query: keychain_items
+    version: 1.4.5
+  - description: Retrieves the current list of loaded kernel modules in the target
+      Linux system.
+    interval: 86400
+    name: kernel_modules
+    platform: linux
+    query: kernel_modules
+    version: 1.4.5
+  - description: Retrieves information from the Operative System where osquery is
+      currently running.
+    interval: 86400
+    name: os_version
+    query: os_version
+    version: 1.4.5
+  - description: Retrieves the configuration values for the Application Layer Firewall
+      for OSX.
+    interval: 86400
+    name: alf
+    platform: darwin
+    query: alf
+    version: 1.4.5
+  - description: Retrieves the list of addons for Firefox in the target system.
+    interval: 86400
+    name: firefox_addons
+    platform: darwin
+    query: firefox_addons
+    version: 1.4.5
+  - description: Retrieves all the information for the current windows drivers in
+      the target Windows system.
+    interval: 86400
+    name: windows_patches
+    platform: windows
+    query: windows_patches
+    version: 2.2.0
+  - description: Retrieves the current list of mounted drives in the target system.
+    interval: 86400
+    name: mounts
+    query: mounts
+    version: 1.4.5
+  - description: Retrieves the list of C/NPAPI browser plugins in the target system.
+    interval: 86400
+    name: browser_plugins
+    platform: darwin
+    query: browser_plugins
+    version: 1.4.5
+  - description: Retrieves the list of extensions for Safari in the target system.
+    interval: 86400
+    name: safari_extensions
+    platform: darwin
+    query: safari_extensions
+    version: 1.4.5
+  targets:
+    labels: null
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current version of the running osquery in the target
+    system and where the configuration was loaded from.
+  name: osquery_info
+  query: select * from time, osquery_info;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of extensions for Chrome in the target system.
+  name: chrome_extensions
+  query: select * from users join chrome_extensions using (uid);
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the APT sources to install packages from in the target
+    Linux system.
+  name: apt_sources
+  query: select * from apt_sources;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current filters and chains per filter in the target system.
+  name: iptables
+  query: select * from iptables;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves information from the current kernel in the target system.
+  name: kernel_info
+  query: select * from kernel_info;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the exceptions for the Application Layer Firewall in OSX.
+  name: alf_exceptions
+  query: select * from alf_exceptions;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current list of USB devices in the target system.
+  name: usb_devices
+  query: select * from usb_devices;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the information for the current windows drivers in the
+    target Windows system.
+  name: windows_drivers
+  query: select * from drivers;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of products as they are installed by Windows Installer
+    in the target Windows system.
+  name: windows_programs
+  query: select * from programs;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the installed DEB packages in the target Linux system.
+  name: deb_packages
+  query: select * from deb_packages;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current disk encryption status for the target system.
+  name: disk_encryption
+  query: select * from disk_encryption;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the services for the Application Layer Firewall in OSX.
+  name: alf_services
+  query: select * from alf_services;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of processes with explicit authorization for the
+    Application Layer Firewall.
+  name: alf_explicit_auths
+  query: select * from alf_explicit_auths;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current list of Network File System mounted shares.
+  name: nfs_shares
+  query: select * from nfs_shares;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of shared resources in the target Windows system.
+  name: windows_shared_resources
+  query: select * from shared_resources;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the installed RPM packages in the target Linux system.
+  name: rpm_packages
+  query: select * from rpm_packages;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the currently installed applications in the target OSX
+    system.
+  name: installed_applications
+  query: select * from apps;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the daemons that will run in the start of the target
+    OSX system.
+  name: launchd
+  query: select * from launchd;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current System Integrity Protection configuration in
+    the target system.
+  name: sip_config
+  query: select * from sip_config;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the Active Directory configuration for the target machine,
+    attached to the domain (requires sudo).
+  name: ad_config
+  query: select * from ad_config;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of brew packages installed in the target OSX system.
+  name: homebrew_packages
+  query: select * from homebrew_packages;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the packages installed with portage from the target Linux
+    system.
+  name: portage_packages
+  query: select * from portage_use;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the PKG related information stored in OSX.
+  name: package_receipts
+  query: select * from package_receipts;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the items contained in the keychain in the target OSX
+    system.
+  name: keychain_items
+  query: select * from keychain_items;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current list of loaded kernel modules in the target Linux
+    system.
+  name: kernel_modules
+  query: select * from kernel_modules;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves information from the Operative System where osquery is currently
+    running.
+  name: os_version
+  query: select * from os_version;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the configuration values for the Application Layer Firewall
+    for OSX.
+  name: alf
+  query: select * from alf;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of addons for Firefox in the target system.
+  name: firefox_addons
+  query: select * from users join firefox_addons using (uid);
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves all the information for the current windows drivers in the
+    target Windows system.
+  name: windows_patches
+  query: select * from patches;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the current list of mounted drives in the target system.
+  name: mounts
+  query: select * from mounts;
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of C/NPAPI browser plugins in the target system.
+  name: browser_plugins
+  query: select * from users join browser_plugins using (uid);
+---
+apiVersion: v1
+kind: query
+spec:
+  description: Retrieves the list of extensions for Safari in the target system.
+  name: safari_extensions
+  query: select * from users join safari_extensions using (uid);
