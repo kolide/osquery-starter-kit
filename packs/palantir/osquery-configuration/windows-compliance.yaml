@@ -67,9 +67,7 @@ spec:
     name: Error_Mode_Registry
     query: Error_Mode_Registry
   - description: This key does not exist by default and controls enabling/disabling
-      error reporting. Some malware creates this key sets the value to 0 (disables
-      error reports). See https://msdn.microsoft.com/en-us/library/aa939342(v=winembedded.5).aspx
-      and https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html
+      error reporting.
     interval: 0
     name: Error_Report_Registry
     query: Error_Report_Registry
