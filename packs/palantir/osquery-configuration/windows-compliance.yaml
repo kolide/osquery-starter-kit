@@ -60,9 +60,8 @@ spec:
     interval: 0
     name: Windows_Update_Settings_Registry
     query: Windows_Update_Settings_Registry
-  - description: 'Controls the suppression of error dialog boxes. The default value
-      is 0 (all messages are visible), but some malware sets this value to 2 (all
-      messages are invisible). See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  - description: This key does not exist by default and controls enabling/disabling
+      error reporting.
     interval: 0
     name: Error_Mode_Registry
     query: Error_Mode_Registry
@@ -103,7 +102,7 @@ spec:
     query: Crash_Dump_Registry
   - description: 'This key exists by default and has a default value of 1. Setting
       this key to 0 disables logging errors/crashes to the System event channel. Some
-      malware sets this value to 0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+      malware sets this value to 0.'
     interval: 0
     name: Log_Errors_Registry
     query: Log_Errors_Registry
@@ -213,9 +212,8 @@ spec:
 apiVersion: v1
 kind: query
 spec:
-  description: 'Controls the suppression of error dialog boxes. The default value
-    is 0 (all messages are visible), but some malware sets this value to 2 (all messages
-    are invisible). See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+  description: This key does not exist by default and controls enabling/disabling
+      error reporting.
   name: Error_Mode_Registry
   query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Windows\ErrorMode';
 ---
@@ -283,8 +281,7 @@ apiVersion: v1
 kind: query
 spec:
   description: 'This key exists by default and has a default value of 1. Setting this
-    key to 0 disables logging errors/crashes to the System event channel. Some malware
-    sets this value to 0. See: https://www.documentcloud.org/documents/3477047-Document-07-Neel-Mehta-Billy-Leonard-and-Shane.html'
+    key to 0 disables logging errors/crashes to the System event channel.'
   name: Log_Errors_Registry
   query: SELECT * FROM registry WHERE path='HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl\LogEvent';
 ---

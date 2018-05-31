@@ -86,7 +86,7 @@ spec:
     version: 1.4.5
   - description: Report on Apple/OS X XProtect 'report' generation. Reports are generated
       when OS X matches an item in xprotect_entries.
-    interval: 0
+    interval: 3600
     name: xprotect_reports
     query: xprotect_reports
     removed: false
@@ -344,7 +344,7 @@ spec:
     query: Genieo
     version: 1.4.5
   targets:
-    labels: null
+    labels:
 ---
 apiVersion: v1
 kind: query
